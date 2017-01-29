@@ -10,11 +10,8 @@
 
 package components;
 
-import java.awt.Color;
-import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URI;
 
 import javax.swing.*;
 
@@ -41,9 +38,6 @@ public class OptionPanel extends JPanel {
 	
 	/** The button that causes the simulation to be updated. */
 	private JButton submit;
-	
-	/** The button that takes the user to the source for the project. */
-	private JButton src;
 
 	/** Constructs an option panel with no action listener. */
 	public OptionPanel() {
@@ -80,20 +74,6 @@ public class OptionPanel extends JPanel {
 		this.fps = new JComboBox<>(fpsValues);
 		this.submit = new JButton("Update");
 		this.submit.addActionListener(new OptionListener());
-		this.src = new JButton("Source Code");
-		this.src.setForeground(new Color(0, 0, 0xEE));
-		this.src.setFocusPainted(false);
-		this.src.setFocusable(false);
-		this.src.setContentAreaFilled(false);
-		this.src.setToolTipText("View the source code for this project");
-		this.src.addActionListener(e -> {
-			try {
-				Desktop d = Desktop.getDesktop();
-				d.browse(new URI("https://GitHub.com/DevonMcGrath"));
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		});
 		
 		// Add components
 		add(sortTypes);
@@ -104,7 +84,6 @@ public class OptionPanel extends JPanel {
 		add(new JLabel("FPS:"));
 		add(fps);
 		add(submit);
-		add(src);
 	}
 	
 	/** The {@code OptionListener} class listens to the submit button. The
