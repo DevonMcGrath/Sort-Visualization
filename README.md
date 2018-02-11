@@ -8,6 +8,3 @@ Every display update, the array is partially sorted using the `sort(int)` method
 
 ## Implemented Algorithms
 A few sorting algorithms have been implemented including: Bubble Sort, Selection Sort, and Bucket Sort.
-
-## Running The Program
-To run the program, it can either be compiled manually or the link to the executable Jar for this project can be found here: https://unitedprojecthub.com/devon/java#sorting.
